@@ -1,3 +1,5 @@
+#!/usr/bin/env raku
+
 use Stomp::Client;
 
 sub MAIN(Str $message = 'Hello, World', :$login = 'guest', :$password = 'guest', :$port = 61613, :$host = 'localhost', :$queue = 'stomptest') {

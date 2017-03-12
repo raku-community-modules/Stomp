@@ -1,3 +1,5 @@
+#!raku
+
 use Test;
 
 my Bool $got-test-meta = True;
