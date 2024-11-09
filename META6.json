@@ -25,16 +25,16 @@
       "Concurrent::Iterator"
   ],
   "provides": {
-      "Stomp::Message" : "lib/Stomp/Message.pm6",
-      "Stomp::Parser"  : "lib/Stomp/Parser.pm6",
-      "Stomp::MessageStream" : "lib/Stomp/MessageStream.pm6",
-      "Stomp::Client" : "lib/Stomp/Client.pm6",
-      "Stomp::Server" : "lib/Stomp/Server.pm6"
+      "Stomp::Message" : "lib/Stomp/Message.rakumod",
+      "Stomp::Parser"  : "lib/Stomp/Parser.rakumod",
+      "Stomp::MessageStream" : "lib/Stomp/MessageStream.rakumod",
+      "Stomp::Client" : "lib/Stomp/Client.rakumod",
+      "Stomp::Server" : "lib/Stomp/Server.rakumod"
   },
   "version": "0.0.1",
   "meta-version": "0",
   "authors": [
       "Jonathan Worthington"
   ],
-  "description": "A Perl 6 STOMP (Simple Text Orientated Messaging Protocol) implementation"
+  "description": "A Raku STOMP (Simple Text Orientated Messaging Protocol) implementation"
 }
