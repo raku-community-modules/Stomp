@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/Stomp/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Stomp/actions) [![Actions Status](https://github.com/raku-community-modules/Stomp/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Stomp/actions) [![Actions Status](https://github.com/raku-community-modules/Stomp/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/Stomp/actions)
+[![Actions Status](https://github.com/raku-community-modules/Stomp/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Stomp/actions) [![Actions Status](https://github.com/raku-community-modules/Stomp/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Stomp/actions)
 
 NAME
 ====
@@ -79,7 +79,9 @@ react {
 UPDATE NOTES
 ============
 
-This module was never released as a public module before being released as a Raku Community module. It lacks more documentation and definitely some TLC. Caretakers are very welcome, as are any Pull Requests to make this a better distribution.
+This module was never released as a public module before being released. It was released as a Raku Community module that it would be useful to someone.
+
+It lacks documentation and definitely needs a lot of TLC. Caretakers are very welcome, as are any Pull Requests to make this a better distribution.
 
 AUTHOR
 ======
