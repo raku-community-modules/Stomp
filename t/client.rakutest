@@ -1,6 +1,6 @@
 use Test;
 use Test::IO::Socket::Async;
-use Stomp::Client;
+use Stomp;
 
 plan 31;
 

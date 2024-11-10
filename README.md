@@ -9,7 +9,7 @@ SYNOPSIS
 ========
 
 ```raku
-use Stomp::Client;
+use Stomp;
 
 my $client = Stomp::Client.new(:$login, :$password, :$port, :$host);
 await $client.connect;
@@ -65,8 +65,6 @@ Stomp::Server
 -------------
 
 ```raku
-use Stomp::Server;
-
 my $server = Stomp::Server.new(:$host, :$port);
 
 react {

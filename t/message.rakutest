@@ -1,5 +1,5 @@
 use Test;
-use Stomp::Message;
+use Stomp;
 
 plan 3;
 

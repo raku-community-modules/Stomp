@@ -8,7 +8,7 @@ Stomp - basic Simple Text Orientated Messaging Protocol implementation
 
 =begin code :lang<raku>
 
-use Stomp::Client;
+use Stomp;
 
 my $client = Stomp::Client.new(:$login, :$password, :$port, :$host);
 await $client.connect;
@@ -72,8 +72,6 @@ MIME-type.  The default is C<text/plain>.
 =head2 Stomp::Server
 
 =begin code :lang<raku>
-
-use Stomp::Server;
 
 my $server = Stomp::Server.new(:$host, :$port);
 

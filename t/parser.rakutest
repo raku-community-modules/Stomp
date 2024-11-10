@@ -1,5 +1,5 @@
 use Test;
-use Stomp::Parser;
+use Stomp;
 
 plan 51;
 

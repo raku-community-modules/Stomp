@@ -12,9 +12,10 @@
   "description": "A Raku STOMP (Simple Text Orientated Messaging Protocol) implementation",
   "license": "Artistic-2.0",
   "meta-version": "0",
-  "name": "Stomp::Client",
+  "name": "Stomp",
   "perl": "6.c",
   "provides": {
+    "Stomp": "lib/Stomp.rakumod",
     "Stomp::Client": "lib/Stomp/Client.rakumod",
     "Stomp::Message": "lib/Stomp/Message.rakumod",
     "Stomp::MessageStream": "lib/Stomp/MessageStream.rakumod",
@@ -24,14 +25,10 @@
   "resources": [
   ],
   "source-url": "https://github.com/raku-community-modules/Stomp.git",
-  "support": {
-    "bugtracker": "https://github.com/jnthn/p6-stomp/issues",
-    "source": "https://github.com/jnthn/p6-stomp.git"
-  },
   "tags": [
-    "stomp",
-    "messaging",
-    "mq"
+    "STOMP",
+    "MESSAGING",
+    "MQ"
   ],
   "test-depends": [
     "Test::IO::Socket::Async"

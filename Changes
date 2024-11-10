@@ -1,6 +1,9 @@
 Revision history for Stomp
 
 {{$NEXT}}
+    - Add "Stomp" stub to make all modules available at once
+    - Fix name of distribution
+    - Fix URL of repository
 
 0.0.1  2024-11-10T12:06:33+01:00
     - Initial version as Raku Community module
