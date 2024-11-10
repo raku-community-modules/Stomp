@@ -1,0 +1,110 @@
+=begin pod
+
+=head1 NAME
+
+Stomp - basic Simple Text Orientated Messaging Protocol implementation
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+
+use Stomp::Client;
+
+my $client = Stomp::Client.new(:$login, :$password, :$port, :$host);
+await $client.connect;
+
+# receiving
+react {
+    whenever $client.subscribe($queue) -> $v {
+        say "Got : ",$v.body;
+    }
+}
+
+# sending
+$client.send($queue, $message);
+
+=end code
+
+=head1 DESCRIPTION
+
+The C<Stomp> distribution provides basic support for 
+L<Stomp (aka Simple Text Oriented Message Protocol)|https://stomp.github.io>
+for both client and server roles.
+
+=head1 CLASSES
+
+=head2 Stomp::Client
+
+=begin code :lang<raku>
+
+my $client = Stomp::Client.new(:$login, :$password, :$port, :$host);
+await $client.connect;
+
+=end code
+
+=head3 subscribe
+
+=begin code :lang<raku>
+
+react {
+    whenever $client.subscribe($queue) -> $v {
+        say "Got : ",$v.body;
+    }
+}
+
+=end code
+
+The C<subscribe> method expects the name of the STOMP queue to receive
+messages from.  It returns a C<Supply>.
+
+=head3 send
+
+=begin code :lang<raku>
+
+$client.send($queue, $message, :$content-type);
+
+=end code
+
+The C<send> method will send the given message to the indicated queue.
+An optional named argument C<:content-type> can be specified with a
+MIME-type.  The default is C<text/plain>.
+
+=head2 Stomp::Server
+
+=begin code :lang<raku>
+
+use Stomp::Server;
+
+my $server = Stomp::Server.new(:$host, :$port);
+
+react {
+    whenever $server.listen -> $message {
+        # ...
+    }
+}
+
+=end code
+
+=head1 UPDATE NOTES
+
+This module was never released as a public module before being released
+as a Raku Community module.  It lacks more documentation and definitely
+some TLC.  Caretakers are very welcome, as are any Pull Requests to make
+this a better distribution.
+
+=head1 AUTHOR
+
+Jonathan Worthington
+
+Source can be located at: https://github.com/raku-community-modules/Stomp .
+Comments and Pull Requests are welcome.
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2016 - 2017 Jonathan Worthington
+
+Copyright 2024 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+
+=end pod

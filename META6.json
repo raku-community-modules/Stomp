@@ -1,40 +1,40 @@
 {
-  "name": "Stomp",
-  "source-url": "https://github.com/jnthn/p6-stomp.git",
-  "support": {
-    "source": "https://github.com/jnthn/p6-stomp.git",
-    "bugtracker" : "https://github.com/jnthn/p6-stomp/issues"
-  },
-  "perl": "6.c",
-  "resources": [
-  ],
   "auth": "Jonathan Worthington",
-  "tags": [
-      "stomp",
-      "messaging",
-      "mq"
+  "authors": [
+    "Jonathan Worthington"
   ],
-  "license": "Artistic-2.0",
   "build-depends": [
   ],
-  "test-depends": [
-      "Test::IO::Socket::Async"
-  ],
   "depends": [
-      "UUID",
-      "Concurrent::Iterator"
+    "UUID",
+    "Concurrent::Iterator"
   ],
-  "provides": {
-      "Stomp::Message" : "lib/Stomp/Message.rakumod",
-      "Stomp::Parser"  : "lib/Stomp/Parser.rakumod",
-      "Stomp::MessageStream" : "lib/Stomp/MessageStream.rakumod",
-      "Stomp::Client" : "lib/Stomp/Client.rakumod",
-      "Stomp::Server" : "lib/Stomp/Server.rakumod"
-  },
-  "version": "0.0.1",
+  "description": "A Raku STOMP (Simple Text Orientated Messaging Protocol) implementation",
+  "license": "Artistic-2.0",
   "meta-version": "0",
-  "authors": [
-      "Jonathan Worthington"
+  "name": "Stomp::Client",
+  "perl": "6.c",
+  "provides": {
+    "Stomp::Client": "lib/Stomp/Client.rakumod",
+    "Stomp::Message": "lib/Stomp/Message.rakumod",
+    "Stomp::MessageStream": "lib/Stomp/MessageStream.rakumod",
+    "Stomp::Parser": "lib/Stomp/Parser.rakumod",
+    "Stomp::Server": "lib/Stomp/Server.rakumod"
+  },
+  "resources": [
   ],
-  "description": "A Raku STOMP (Simple Text Orientated Messaging Protocol) implementation"
+  "source-url": "https://github.com/raku-community-modules/Stomp.git",
+  "support": {
+    "bugtracker": "https://github.com/jnthn/p6-stomp/issues",
+    "source": "https://github.com/jnthn/p6-stomp.git"
+  },
+  "tags": [
+    "stomp",
+    "messaging",
+    "mq"
+  ],
+  "test-depends": [
+    "Test::IO::Socket::Async"
+  ],
+  "version": "0.0.1"
 }
