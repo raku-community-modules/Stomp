@@ -2,6 +2,9 @@ Revision history for Stomp
 
 {{$NEXT}}
 
+0.1.0  2026-02-15T22:21:00+01:00
+    - Extend Server functionality to be able to implement a broker
+
 0.0.2  2024-11-10T13:08:59+01:00
     - Add "Stomp" stub to make all modules available at once
     - Fix name of distribution
