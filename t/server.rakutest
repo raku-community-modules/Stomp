@@ -2,7 +2,7 @@ use Test;
 use Test::IO::Socket::Async;
 use Stomp;
 
-plan 28;
+plan 30;
 
 constant $test-socket = Test::IO::Socket::Async.new;
 my \TestableServer = Stomp::Server but role {
@@ -96,7 +96,8 @@ dies-ok { TestableServer.new(port => $test-port) }, "Must provide host and port 
     my $match-message = Stomp::Message.new(
         command => 'SEND',
         headers => (
-            :$destination
+            :$destination,
+            random-header => 'random-value'
         ),
         body    => 'Test Message'
     );
@@ -121,6 +122,10 @@ dies-ok { TestableServer.new(port => $test-port) }, "Must provide host and port 
     await Promise.anyof($rec-promise, Promise.in(5));
 
     is $rec-message.body, $match-message.body, "got the message from published-messages";
+    for $match-message.headers.kv -> $k, $v {
+        is $rec-message.headers{$k}, $v, "got expected header $k";
+    }
+
 
     $test-conn.receive-data: Stomp::Message.new(
         command => 'UNSUBSCRIBE',
