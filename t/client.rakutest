@@ -2,7 +2,7 @@ use Test;
 use Test::IO::Socket::Async;
 use Stomp;
 
-plan 31;
+plan 33;
 
 constant $test-host = 'localhost';
 constant $test-port = 1234;
@@ -82,6 +82,13 @@ my \TestableClient = Stomp::Client but role {
         content-type => $test-type);
     $message = Stomp::Parser.parse(await $test-conn.sent-data).made;
     is $message.headers<content-type>, $test-type, "can set content-type header";
+
+    $send-promise = $client.send($test-destination, $test-body,
+        content-type => $test-type, random-header => 'random-value');
+    $message = Stomp::Parser.parse(await $test-conn.sent-data).made;
+    is $message.headers<content-type>, $test-type, "can set content-type header";
+    is $message.headers<random-header>, 'random-value', "can set different header";
+
 
     my $sub-supply = $client.subscribe($test-destination);
     isa-ok $sub-supply, Supply, "subscribe returns a Supply";

@@ -2,12 +2,12 @@
 
 use Stomp::Client;
 
-sub MAIN(Str $message = 'Hello, World', :$login = 'guest', :$password = 'guest', :$port = 61613, :$host = 'localhost', :$queue = 'stomptest') {
+sub MAIN(Str $message = 'Hello, World', :$login = 'guest', :$password = 'guest', :$port = 61613, :$host = 'localhost', :$queue = 'stomptest', *%headers) {
 
 	my $client = Stomp::Client.new(:$login, :$password, :$port, :$host);
 
 	await $client.connect;
 
-	$client.send($queue, $message);
+	$client.send($queue, $message, |%headers);
 }
 

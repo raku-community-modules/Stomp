@@ -46,11 +46,11 @@ class Stomp::Client does Stomp::MessageStream[Stomp::Parser::ServerCommands] {
         IO::Socket::Async
     }
 
-    method send($destination, $body, :$content-type = "text/plain") {
+    method send($destination, $body, :$content-type = "text/plain", *%headers) {
         self!ensure-connected;
         $!connection.print: Stomp::Message.new:
             command => 'SEND',
-            headers => ( :$destination, :$content-type ),
+            headers => ( :$destination, :$content-type, %headers ),
             body => $body;
     }
 
